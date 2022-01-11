@@ -1,4 +1,4 @@
-package com.kbalazsworks.stackjudge_aws_sdk_java_maven;
+package com.kbalazsworks.stackjudge_aws_sdk_java_maven.implementation;
 
 import com.azure.core.annotation.BodyParam;
 import com.azure.core.annotation.ExpectedResponses;
@@ -22,7 +22,7 @@ import com.azure.core.util.serializer.SerializerAdapter;
 import reactor.core.publisher.Mono;
 
 /** Initializes a new instance of the StackjudgeAwsAPI type. */
-public final class StackjudgeAwsAPI {
+public final class StackjudgeAwsAPIImpl {
     /** The proxy service used to perform REST calls. */
     private final StackjudgeAwsAPIService service;
 
@@ -67,7 +67,7 @@ public final class StackjudgeAwsAPI {
      *
      * @param host server parameter.
      */
-    StackjudgeAwsAPI(String host) {
+    public StackjudgeAwsAPIImpl(String host) {
         this(
                 new HttpPipelineBuilder()
                         .policies(new UserAgentPolicy(), new RetryPolicy(), new CookiePolicy())
@@ -82,7 +82,7 @@ public final class StackjudgeAwsAPI {
      * @param httpPipeline The HTTP pipeline to send requests through.
      * @param host server parameter.
      */
-    StackjudgeAwsAPI(HttpPipeline httpPipeline, String host) {
+    public StackjudgeAwsAPIImpl(HttpPipeline httpPipeline, String host) {
         this(httpPipeline, JacksonAdapter.createDefaultSerializerAdapter(), host);
     }
 
@@ -93,7 +93,7 @@ public final class StackjudgeAwsAPI {
      * @param serializerAdapter The serializer to serialize an object into a string.
      * @param host server parameter.
      */
-    StackjudgeAwsAPI(HttpPipeline httpPipeline, SerializerAdapter serializerAdapter, String host) {
+    public StackjudgeAwsAPIImpl(HttpPipeline httpPipeline, SerializerAdapter serializerAdapter, String host) {
         this.httpPipeline = httpPipeline;
         this.serializerAdapter = serializerAdapter;
         this.host = host;

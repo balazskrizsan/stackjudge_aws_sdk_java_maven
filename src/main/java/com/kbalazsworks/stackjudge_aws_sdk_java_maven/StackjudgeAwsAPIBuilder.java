@@ -19,6 +19,7 @@ import com.azure.core.util.Configuration;
 import com.azure.core.util.CoreUtils;
 import com.azure.core.util.serializer.JacksonAdapter;
 import com.azure.core.util.serializer.SerializerAdapter;
+import com.kbalazsworks.stackjudge_aws_sdk_java_maven.implementation.StackjudgeAwsAPIImpl;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,7 +27,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /** A builder for creating a new instance of the StackjudgeAwsAPI type. */
-@ServiceClientBuilder(serviceClients = {StackjudgeAwsAPI.class})
+@ServiceClientBuilder(serviceClients = {StackjudgeAwsAPIAsyncClient.class})
 public final class StackjudgeAwsAPIBuilder {
     private static final String SDK_NAME = "name";
 
@@ -187,11 +188,11 @@ public final class StackjudgeAwsAPIBuilder {
     }
 
     /**
-     * Builds an instance of StackjudgeAwsAPI with the provided parameters.
+     * Builds an instance of StackjudgeAwsAPIImpl with the provided parameters.
      *
-     * @return an instance of StackjudgeAwsAPI.
+     * @return an instance of StackjudgeAwsAPIImpl.
      */
-    public StackjudgeAwsAPI buildClient() {
+    private StackjudgeAwsAPIImpl buildInnerClient() {
         if (host == null) {
             this.host = "";
         }
@@ -201,7 +202,7 @@ public final class StackjudgeAwsAPIBuilder {
         if (serializerAdapter == null) {
             this.serializerAdapter = JacksonAdapter.createDefaultSerializerAdapter();
         }
-        StackjudgeAwsAPI client = new StackjudgeAwsAPI(pipeline, serializerAdapter, host);
+        StackjudgeAwsAPIImpl client = new StackjudgeAwsAPIImpl(pipeline, serializerAdapter, host);
         return client;
     }
 
@@ -244,5 +245,14 @@ public final class StackjudgeAwsAPIBuilder {
                         .clientOptions(clientOptions)
                         .build();
         return httpPipeline;
+    }
+
+    /**
+     * Builds an instance of StackjudgeAwsAPIAsyncClient async client.
+     *
+     * @return an instance of StackjudgeAwsAPIAsyncClient.
+     */
+    public StackjudgeAwsAPIAsyncClient buildAsyncClient() {
+        return new StackjudgeAwsAPIAsyncClient(buildInnerClient());
     }
 }
