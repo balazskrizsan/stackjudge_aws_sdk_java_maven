@@ -1,6 +1,6 @@
 package com.kbalazsworks.stackjudge_aws_sdk.schema_parameter_objects;
 
-import com.kbalazsworks.stackjudge_aws_sdk.common.interfaces.OpenSdkPostable;
+import com.kbalazsworks.stackjudge_aws_sdk.common.interfaces.IOpenSdkPostable;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpEntity;
 import org.springframework.util.LinkedMultiValueMap;
@@ -10,8 +10,7 @@ import javax.annotation.processing.Generated;
 import java.util.List;
 
 @Generated("OpenSDK: https://github.com/balazskrizsan/OpenSdk")
-public final class PostCompanyOwnEmailRequest implements OpenSdkPostable
-
+public final class PostCompanyOwnEmailRequest implements IOpenSdkPostable
 {
     private final String to;
     private final String varName;

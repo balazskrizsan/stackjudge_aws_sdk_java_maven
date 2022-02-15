@@ -5,12 +5,12 @@ import com.kbalazsworks.stackjudge_aws_sdk.schema_parameter_objects.*;
 import javax.annotation.processing.Generated;
 
 @Generated("OpenSDK: https://github.com/balazskrizsan/OpenSdk")
-public interface SesSendCompanyownemail
+public interface IS3Upload
 {
     default String getApiUri()
     {
-        return "/ses/send/company-own-email";
+        return "/s3/upload";
     }
 
-    void execute(PostCompanyOwnEmailRequest postCompanyOwnEmailRequest);
+    void execute(PostUploadRequest postUploadRequest);
 }

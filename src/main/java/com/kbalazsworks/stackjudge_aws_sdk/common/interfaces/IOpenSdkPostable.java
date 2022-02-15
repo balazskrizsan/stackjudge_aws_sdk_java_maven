@@ -2,7 +2,7 @@ package com.kbalazsworks.stackjudge_aws_sdk.common.interfaces;
 
 import org.springframework.util.MultiValueMap;
 
-public interface OpenSdkPostable
+public interface IOpenSdkPostable
 {
     MultiValueMap<String, Object> toOpenSdkPost();
 }
