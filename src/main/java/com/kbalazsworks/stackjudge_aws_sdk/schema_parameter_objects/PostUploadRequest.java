@@ -13,18 +13,21 @@ import java.util.List;
 public final class PostUploadRequest implements IOpenSdkPostable
 {
     private final String cdnNamespace;
+    private final String subFolder;
     private final String fileName;
     private final String fileExtension;
     private final HttpEntity<ByteArrayResource> content;
 
     public PostUploadRequest(
-        String cdnNamespace,
-        String fileName,
-        String fileExtension,
-        HttpEntity<ByteArrayResource> content
-    )
+String cdnNamespace,
+String subFolder,
+String fileName,
+String fileExtension,
+HttpEntity<ByteArrayResource> content
+)
     {
         this.cdnNamespace = cdnNamespace;
+        this.subFolder = subFolder;
         this.fileName = fileName;
         this.fileExtension = fileExtension;
         this.content = content;
@@ -33,6 +36,11 @@ public final class PostUploadRequest implements IOpenSdkPostable
     public String cdnNamespace()
     {
         return cdnNamespace;
+    }
+
+    public String subFolder()
+    {
+        return subFolder;
     }
 
     public String fileName()
@@ -56,6 +64,7 @@ public final class PostUploadRequest implements IOpenSdkPostable
         return new LinkedMultiValueMap<>()
         {{
             addAll("cdnNamespace", List.of(cdnNamespace()));
+            addAll("subFolder", List.of(subFolder()));
             addAll("fileName", List.of(fileName()));
             addAll("fileExtension", List.of(fileExtension()));
             addAll("content", List.of(content()));

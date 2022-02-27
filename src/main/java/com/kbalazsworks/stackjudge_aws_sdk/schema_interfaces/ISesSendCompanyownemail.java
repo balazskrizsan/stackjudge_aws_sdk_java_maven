@@ -1,6 +1,7 @@
 package com.kbalazsworks.stackjudge_aws_sdk.schema_interfaces;
 
 import com.kbalazsworks.stackjudge_aws_sdk.common.interfaces.IOpenSdkPostable;
+import com.kbalazsworks.stackjudge_aws_sdk.schema_parameter_objects.*;
 
 import javax.annotation.processing.Generated;
 

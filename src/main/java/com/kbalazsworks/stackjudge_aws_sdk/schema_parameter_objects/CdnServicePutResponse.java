@@ -10,36 +10,44 @@ import javax.annotation.processing.Generated;
 import java.util.List;
 
 @Generated("OpenSDK: https://github.com/balazskrizsan/OpenSdk")
-public final class PostCompanyOwnEmailRequest implements IOpenSdkPostable
+public final class CdnServicePutResponse implements IOpenSdkPostable
 {
-    private final String to;
-    private final String varName;
-    private final String varOwnUrl;
+    private final String path;
+    private final String fileName;
+    private final String s3eTag;
+    private final String s3contentMd5;
 
-    public PostCompanyOwnEmailRequest(
-String to,
-String varName,
-String varOwnUrl
+    public CdnServicePutResponse(
+String path,
+String fileName,
+String s3eTag,
+String s3contentMd5
 )
     {
-        this.to = to;
-        this.varName = varName;
-        this.varOwnUrl = varOwnUrl;
+        this.path = path;
+        this.fileName = fileName;
+        this.s3eTag = s3eTag;
+        this.s3contentMd5 = s3contentMd5;
     }
 
-    public String to()
+    public String path()
     {
-        return to;
+        return path;
     }
 
-    public String varName()
+    public String fileName()
     {
-        return varName;
+        return fileName;
     }
 
-    public String varOwnUrl()
+    public String s3eTag()
     {
-        return varOwnUrl;
+        return s3eTag;
+    }
+
+    public String s3contentMd5()
+    {
+        return s3contentMd5;
     }
 
     @Override
@@ -47,9 +55,10 @@ String varOwnUrl
     {
         return new LinkedMultiValueMap<>()
         {{
-            addAll("to", List.of(to()));
-            addAll("varName", List.of(varName()));
-            addAll("varOwnUrl", List.of(varOwnUrl()));
+            addAll("path", List.of(path()));
+            addAll("fileName", List.of(fileName()));
+            addAll("s3eTag", List.of(s3eTag()));
+            addAll("s3contentMd5", List.of(s3contentMd5()));
         }};
     }
 
