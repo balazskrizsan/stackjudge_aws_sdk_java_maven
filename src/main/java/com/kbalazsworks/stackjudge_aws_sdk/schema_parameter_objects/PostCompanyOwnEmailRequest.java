@@ -17,10 +17,10 @@ public final class PostCompanyOwnEmailRequest implements IOpenSdkPostable
     private final String varOwnUrl;
 
     public PostCompanyOwnEmailRequest(
-String to,
-String varName,
-String varOwnUrl
-)
+        String to,
+        String varName,
+        String varOwnUrl
+    )
     {
         this.to = to;
         this.varName = varName;

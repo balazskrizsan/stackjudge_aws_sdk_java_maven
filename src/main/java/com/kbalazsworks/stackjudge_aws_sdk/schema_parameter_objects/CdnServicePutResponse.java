@@ -18,11 +18,11 @@ public final class CdnServicePutResponse implements IOpenSdkPostable
     private final String s3contentMd5;
 
     public CdnServicePutResponse(
-String path,
-String fileName,
-String s3eTag,
-String s3contentMd5
-)
+        String path,
+        String fileName,
+        String s3eTag,
+        String s3contentMd5
+    )
     {
         this.path = path;
         this.fileName = fileName;

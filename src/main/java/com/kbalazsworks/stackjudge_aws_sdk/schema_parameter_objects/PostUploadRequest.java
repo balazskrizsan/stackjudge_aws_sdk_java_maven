@@ -19,12 +19,12 @@ public final class PostUploadRequest implements IOpenSdkPostable
     private final HttpEntity<ByteArrayResource> content;
 
     public PostUploadRequest(
-String cdnNamespace,
-String subFolder,
-String fileName,
-String fileExtension,
-HttpEntity<ByteArrayResource> content
-)
+        String cdnNamespace,
+        String subFolder,
+        String fileName,
+        String fileExtension,
+        HttpEntity<ByteArrayResource> content
+    )
     {
         this.cdnNamespace = cdnNamespace;
         this.subFolder = subFolder;

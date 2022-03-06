@@ -12,27 +12,27 @@ import java.util.List;
 @Generated("OpenSDK: https://github.com/balazskrizsan/OpenSdk")
 public final class ApiResponseDataCdnServicePutResponse implements IOpenSdkPostable
 {
-    private final CdnServicePutResponse CdnServicePutResponse;
+    private final CdnServicePutResponse cdnServicePutResponse;
     private final Boolean success;
     private final Integer errorCodeerrorCode;
     private final String requestId;
 
     public ApiResponseDataCdnServicePutResponse(
-CdnServicePutResponse CdnServicePutResponse,
-Boolean success,
-Integer errorCodeerrorCode,
-String requestId
-)
+        CdnServicePutResponse cdnServicePutResponse,
+        Boolean success,
+        Integer errorCodeerrorCode,
+        String requestId
+    )
     {
-        this.CdnServicePutResponse = CdnServicePutResponse;
+        this.cdnServicePutResponse = cdnServicePutResponse;
         this.success = success;
         this.errorCodeerrorCode = errorCodeerrorCode;
         this.requestId = requestId;
     }
 
-    public CdnServicePutResponse CdnServicePutResponse()
+    public CdnServicePutResponse cdnServicePutResponse()
     {
-        return CdnServicePutResponse;
+        return cdnServicePutResponse;
     }
 
     public Boolean success()
@@ -55,7 +55,7 @@ String requestId
     {
         return new LinkedMultiValueMap<>()
         {{
-            addAll("CdnServicePutResponse", List.of(CdnServicePutResponse()));
+            addAll("cdnServicePutResponse", List.of(cdnServicePutResponse()));
             addAll("success", List.of(success()));
             addAll("errorCodeerrorCode", List.of(errorCodeerrorCode()));
             addAll("requestId", List.of(requestId()));
