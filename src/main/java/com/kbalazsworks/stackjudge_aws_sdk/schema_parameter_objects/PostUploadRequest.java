@@ -1,6 +1,9 @@
 package com.kbalazsworks.stackjudge_aws_sdk.schema_parameter_objects;
 
 import com.kbalazsworks.stackjudge_aws_sdk.common.interfaces.IOpenSdkPostable;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.extern.jackson.Jacksonized;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpEntity;
 import org.springframework.util.LinkedMultiValueMap;
@@ -10,6 +13,9 @@ import javax.annotation.processing.Generated;
 import java.util.List;
 
 @Generated("OpenSDK: https://github.com/balazskrizsan/OpenSdk")
+@Jacksonized
+@Builder
+@Getter
 public final class PostUploadRequest implements IOpenSdkPostable
 {
     private final String cdnNamespace;
@@ -18,74 +24,16 @@ public final class PostUploadRequest implements IOpenSdkPostable
     private final String fileExtension;
     private final HttpEntity<ByteArrayResource> content;
 
-    public PostUploadRequest(
-        String cdnNamespace,
-        String subFolder,
-        String fileName,
-        String fileExtension,
-        HttpEntity<ByteArrayResource> content
-    )
-    {
-        this.cdnNamespace = cdnNamespace;
-        this.subFolder = subFolder;
-        this.fileName = fileName;
-        this.fileExtension = fileExtension;
-        this.content = content;
-    }
-
-    public String cdnNamespace()
-    {
-        return cdnNamespace;
-    }
-
-    public String subFolder()
-    {
-        return subFolder;
-    }
-
-    public String fileName()
-    {
-        return fileName;
-    }
-
-    public String fileExtension()
-    {
-        return fileExtension;
-    }
-
-    public HttpEntity<ByteArrayResource> content()
-    {
-        return content;
-    }
-
     @Override
     public MultiValueMap<String, Object> toOpenSdkPost()
     {
         return new LinkedMultiValueMap<>()
         {{
-            addAll("cdnNamespace", List.of(cdnNamespace()));
-            addAll("subFolder", List.of(subFolder()));
-            addAll("fileName", List.of(fileName()));
-            addAll("fileExtension", List.of(fileExtension()));
-            addAll("content", List.of(content()));
+            addAll("cdnNamespace", List.of(cdnNamespace));
+            addAll("subFolder", List.of(subFolder));
+            addAll("fileName", List.of(fileName));
+            addAll("fileExtension", List.of(fileExtension));
+            addAll("content", List.of(content));
         }};
     }
-
-    // not yet supported in the generator
-//    @Override
-//    public boolean equals(Object obj)
-//    {
-//    }
-
-    // not yet supported in the generator
-//    @Override
-//    public int hashCode()
-//    {
-//    }
-
-    // not yet supported in the generator
-//    @Override
-//    public String toString()
-//    {
-//    }
 }
