@@ -1,6 +1,7 @@
 package com.kbalazsworks.stackjudge_aws_sdk.schema_parameter_objects;
 
 import com.kbalazsworks.stackjudge_aws_sdk.common.interfaces.IOpenSdkPostable;
+import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.extern.jackson.Jacksonized;
@@ -14,7 +15,7 @@ import java.util.List;
 
 @Generated("OpenSDK: https://github.com/balazskrizsan/OpenSdk")
 @Jacksonized
-@Builder
+@Builder(access = AccessLevel.PUBLIC)
 @Getter
 public final class PostUploadRequest implements IOpenSdkPostable
 {
@@ -37,4 +38,3 @@ public final class PostUploadRequest implements IOpenSdkPostable
         }};
     }
 }
-
