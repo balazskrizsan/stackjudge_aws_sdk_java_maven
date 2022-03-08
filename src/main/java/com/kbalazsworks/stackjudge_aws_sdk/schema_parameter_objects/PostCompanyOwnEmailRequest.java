@@ -3,6 +3,7 @@ package com.kbalazsworks.stackjudge_aws_sdk.schema_parameter_objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.kbalazsworks.stackjudge_aws_sdk.common.interfaces.IOpenSdkPostable;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.extern.jackson.Jacksonized;
@@ -17,6 +18,7 @@ import java.util.List;
 @Generated("OpenSDK: https://github.com/balazskrizsan/OpenSdk")
 @Jacksonized
 @Builder(access = AccessLevel.PUBLIC)
+@AllArgsConstructor
 @Getter
 public final class PostCompanyOwnEmailRequest implements IOpenSdkPostable
 {
