@@ -1,5 +1,6 @@
 package com.kbalazsworks.stackjudge_aws_sdk.schema_parameter_objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.kbalazsworks.stackjudge_aws_sdk.common.interfaces.IOpenSdkPostable;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -19,9 +20,13 @@ import java.util.List;
 @Getter
 public final class CdnServicePutResponse implements IOpenSdkPostable
 {
+    @JsonProperty("path")
     private final String path;
+    @JsonProperty("fileName")
     private final String fileName;
+    @JsonProperty("s3eTag")
     private final String s3eTag;
+    @JsonProperty("s3contentMd5")
     private final String s3contentMd5;
 
     @Override

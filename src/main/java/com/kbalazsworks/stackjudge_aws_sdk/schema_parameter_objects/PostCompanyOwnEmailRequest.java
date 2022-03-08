@@ -1,5 +1,6 @@
 package com.kbalazsworks.stackjudge_aws_sdk.schema_parameter_objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.kbalazsworks.stackjudge_aws_sdk.common.interfaces.IOpenSdkPostable;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -19,8 +20,11 @@ import java.util.List;
 @Getter
 public final class PostCompanyOwnEmailRequest implements IOpenSdkPostable
 {
+    @JsonProperty("to")
     private final String to;
+    @JsonProperty("varName")
     private final String varName;
+    @JsonProperty("varOwnUrl")
     private final String varOwnUrl;
 
     @Override

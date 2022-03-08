@@ -1,5 +1,6 @@
 package com.kbalazsworks.stackjudge_aws_sdk.schema_parameter_objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.kbalazsworks.stackjudge_aws_sdk.common.interfaces.IOpenSdkPostable;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -19,9 +20,13 @@ import java.util.List;
 @Getter
 public final class ApiResponseDataCdnServicePutResponse implements IOpenSdkPostable
 {
+    @JsonProperty("data")
     private final CdnServicePutResponse cdnServicePutResponse;
+    @JsonProperty("success")
     private final Boolean success;
-    private final Integer errorCodeerrorCode;
+    @JsonProperty("errorCode")
+    private final Integer errorCode;
+    @JsonProperty("requestId")
     private final String requestId;
 
     @Override
@@ -31,7 +36,7 @@ public final class ApiResponseDataCdnServicePutResponse implements IOpenSdkPosta
         {{
             addAll("cdnServicePutResponse", List.of(cdnServicePutResponse));
             addAll("success", List.of(success));
-            addAll("errorCodeerrorCode", List.of(errorCodeerrorCode));
+            addAll("errorCode", List.of(errorCode));
             addAll("requestId", List.of(requestId));
         }};
     }

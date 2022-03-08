@@ -1,5 +1,6 @@
 package com.kbalazsworks.stackjudge_aws_sdk.schema_parameter_objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.kbalazsworks.stackjudge_aws_sdk.common.interfaces.IOpenSdkPostable;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -19,10 +20,15 @@ import java.util.List;
 @Getter
 public final class PostUploadRequest implements IOpenSdkPostable
 {
+    @JsonProperty("cdnNamespace")
     private final String cdnNamespace;
+    @JsonProperty("subFolder")
     private final String subFolder;
+    @JsonProperty("fileName")
     private final String fileName;
+    @JsonProperty("fileExtension")
     private final String fileExtension;
+    @JsonProperty("#/components/schemas/FileUpload")
     private final HttpEntity<ByteArrayResource> content;
 
     @Override
