@@ -20,7 +20,7 @@ import java.util.List;
 @Builder(access = AccessLevel.PUBLIC)
 @AllArgsConstructor
 @Getter
-public final class ApiResponseDataCdnServicePutResponse implements IOpenSdkPostable
+public final class ApiResponseDataCdnServicePutResponse
 {
     @JsonProperty("data")
     private final CdnServicePutResponse cdnServicePutResponse;
@@ -30,16 +30,4 @@ public final class ApiResponseDataCdnServicePutResponse implements IOpenSdkPosta
     private final Integer errorCode;
     @JsonProperty("requestId")
     private final String requestId;
-
-    @Override
-    public MultiValueMap<String, Object> toOpenSdkPost()
-    {
-        return new LinkedMultiValueMap<>()
-        {{
-            addAll("cdnServicePutResponse", List.of(cdnServicePutResponse));
-            addAll("success", List.of(success));
-            addAll("errorCode", List.of(errorCode));
-            addAll("requestId", List.of(requestId));
-        }};
-    }
 }
