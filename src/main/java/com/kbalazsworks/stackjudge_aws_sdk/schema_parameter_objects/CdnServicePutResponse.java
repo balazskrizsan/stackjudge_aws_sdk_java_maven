@@ -1,7 +1,7 @@
 package com.kbalazsworks.stackjudge_aws_sdk.schema_parameter_objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.kbalazsworks.stackjudge_aws_sdk.common.interfaces.IOpenSdkPostable;
+import com.kbalazsworks.stackjudge_aws_sdk.common.interfaces.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,7 +20,7 @@ import java.util.List;
 @Builder(access = AccessLevel.PUBLIC)
 @AllArgsConstructor
 @Getter
-public final class CdnServicePutResponse implements IOpenSdkPostable
+public final class CdnServicePutResponse
 {
     @JsonProperty("path")
     private final String path;
@@ -30,16 +30,4 @@ public final class CdnServicePutResponse implements IOpenSdkPostable
     private final String s3eTag;
     @JsonProperty("s3contentMd5")
     private final String s3contentMd5;
-
-    @Override
-    public MultiValueMap<String, Object> toOpenSdkPost()
-    {
-        return new LinkedMultiValueMap<>()
-        {{
-            addAll("path", List.of(path));
-            addAll("fileName", List.of(fileName));
-            addAll("s3eTag", List.of(s3eTag));
-            addAll("s3contentMd5", List.of(s3contentMd5));
-        }};
-    }
 }
