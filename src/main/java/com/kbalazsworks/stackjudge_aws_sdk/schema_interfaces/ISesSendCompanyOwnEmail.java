@@ -17,10 +17,10 @@ public interface ISesSendCompanyOwnEmail
         return "/ses/send/company-own-email";
     }
 
-    void post(IOpenSdkGetable postCompanyOwnEmailRequest)
+    void post(IOpenSdkPostable postCompanyOwnEmailRequest)
     throws ResponseException;
 
     @Async
-    void postAsync(IOpenSdkGetable postCompanyOwnEmailRequest)
+    void postAsync(IOpenSdkPostable postCompanyOwnEmailRequest)
     throws ResponseException;
 }

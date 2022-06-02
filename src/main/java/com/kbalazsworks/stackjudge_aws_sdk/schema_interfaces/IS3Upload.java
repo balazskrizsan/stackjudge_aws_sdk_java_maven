@@ -17,10 +17,10 @@ public interface IS3Upload
         return "/s3/upload";
     }
 
-    StdResponse<CdnServicePutResponse> post(IOpenSdkGetable postUploadRequest)
+    StdResponse<CdnServicePutResponse> post(IOpenSdkPostable postUploadRequest)
     throws ResponseException;
 
     @Async
-    Future<StdResponse<CdnServicePutResponse>> postAsync(IOpenSdkGetable postUploadRequest)
+    Future<StdResponse<CdnServicePutResponse>> postAsync(IOpenSdkPostable postUploadRequest)
     throws ResponseException;
 }
