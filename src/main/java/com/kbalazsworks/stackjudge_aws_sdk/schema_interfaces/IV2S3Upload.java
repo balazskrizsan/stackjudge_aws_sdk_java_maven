@@ -10,17 +10,17 @@ import javax.annotation.processing.Generated;
 import java.util.concurrent.Future;
 
 @Generated("OpenSDK: https://github.com/balazskrizsan/OpenSdk")
-public interface ISesSendCompanyOwnEmail
+public interface IV2S3Upload
 {
     default String getApiUri()
     {
-        return "/ses/send/company-own-email";
+        return "/v2/s3/upload";
     }
 
-    StdResponse<String> post(IOpenSdkPostable postCompanyOwnEmailRequest)
+    StdResponse<PutAndSaveResponse> post(IOpenSdkPostable postUploadRequest)
     throws ResponseException;
 
     @Async
-    Future<StdResponse<String>> postAsync(IOpenSdkPostable postCompanyOwnEmailRequest)
+    Future<StdResponse<PutAndSaveResponse>> postAsync(IOpenSdkPostable postUploadRequest)
     throws ResponseException;
 }

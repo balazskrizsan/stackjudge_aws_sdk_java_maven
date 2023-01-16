@@ -20,23 +20,16 @@ import java.util.*;
 @Builder(access = AccessLevel.PUBLIC)
 @AllArgsConstructor
 @Getter
-public final class PostCompanyOwnEmailRequest implements IOpenSdkPostable
+public final class RemoteFile
 {
-    @JsonProperty("to")
-    private final String to;
-    @JsonProperty("varName")
-    private final String varName;
-    @JsonProperty("varOwnUrl")
-    private final String varOwnUrl;
-
-    @Override
-    public MultiValueMap<String, Object> toOpenSdkPost()
-    {
-        return new LinkedMultiValueMap<>()
-        {{
-            addAll("to", List.of(to));
-            addAll("varName", List.of(varName));
-            addAll("varOwnUrl", List.of(varOwnUrl));
-        }};
-    }
+    @JsonProperty("id")
+    private final UUID id;
+    @JsonProperty("path")
+    private final String path;
+    @JsonProperty("filename")
+    private final String filename;
+    @JsonProperty("s3ETag")
+    private final String s3ETag;
+    @JsonProperty("s3ContentMd5")
+    private final String s3ContentMd5;
 }
