@@ -73,6 +73,24 @@
         </dependency>
     </dependencies>
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-plugin-plugin</artifactId>
+                    <version>3.6.0</version>
+                    <configuration>
+                        <!-- see http://jira.codehaus.org/browse/MNG-5346 -->
+                        <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.9.1</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>${quarkus.platform.group-id}</groupId>
@@ -95,6 +113,11 @@
                 <configuration>
                     <parameters>${maven.compiler.parameters}</parameters>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>3.0.0-M1</version>
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -147,4 +170,11 @@
             </properties>
         </profile>
     </profiles>
+    <distributionManagement>
+        <repository>
+            <id>cloudsmith</id>
+            <name>CloudSmith kbalazsworks Apache Maven Packages</name>
+            <url>https://maven.cloudsmith.io/stackjudge/stackjudge_aws_sdk_java_maven</url>
+        </repository>
+    </distributionManagement>
 </project>
